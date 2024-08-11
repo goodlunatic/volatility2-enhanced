@@ -2,6 +2,10 @@
 
 结合社区和官方提供的，针对部分功能性完善的补丁，并且未合并进 Volatility2 main 分支的，进行修改后做的二次分发版本
 
+## 参考项目
+
+- [blacktop/docker-volatility: Volatility Dockerfile](https://github.com/blacktop/docker-volatility)
+
 ## 修改内容
 
 > 目前仅为预计修改方案，本仓库的 Volatility2 源码未进行修改
