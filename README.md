@@ -22,7 +22,13 @@
 - [Linux Profile Error - KeyError: 'DW_AT_data_member_location' - volatilityfoundation/volatility Issue #828](https://github.com/volatilityfoundation/volatility/issues/828)
 - [Update Linux DTB scanner to handle newer Linux kernel versions (>= 5.14-rc1) - volatilityfoundation/volatility Pull Request #852](https://github.com/volatilityfoundation/volatility/pull/852)
 
-## 对 dwarf 文件的源码，增加 GPL 的开源协议声明
+### 由于对较旧的 Linux 内核使用了最新版本的 **dwarfdump** 导致出现 `ValueError: invalid literal for int() with base 10`
+
+本修改参考自：
+
+- [Abyss-W4tcher/volatility2-profiles - Volatility patches](https://github.com/Abyss-W4tcher/volatility2-profiles?tab=readme-ov-file#volatility-patches)
+
+### 对 dwarf 文件的源码，增加 GPL 的开源协议声明
 
 本修改，针对 `tools/linux/module.c` 编译过程中所会遇到的报错，进行修改，即在源码的末尾增加以下语句
 
