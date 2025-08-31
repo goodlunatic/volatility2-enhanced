@@ -51,6 +51,9 @@ class DWARFParser(object):
         'sizetype' : 'unsigned long',
         'ssizetype' : 'long',
         '__int128 unsigned': 'unsigned long long',
+        # add this to fix KeyError: '__int128'
+        '__int128': 'long long',
+        'unsigned __int128': 'unsigned long long',
     }
 
 
@@ -268,7 +271,11 @@ class DWARFParser(object):
 
                 if idx != -1:
                     d = d[:idx]
-
+                if not d.strip().isdigit():
+                    # DW_AT_data_member_location with following format : "len 0x0002: 0x2300: DW_OP_plus_uconst 0"
+                    d = d.split(': ')[-1]
+                    d = d.split(' ')[1]
+                    
                 off = int(d)
             else:
                 if 'DW_AT_data_bit_offset' in data:
